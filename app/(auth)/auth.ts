@@ -6,6 +6,8 @@ import { getUser } from '@/lib/db/queries';
 
 import { authConfig } from './auth.config';
 
+
+
 interface ExtendedSession extends Session {
   user: User;
 }
@@ -28,7 +30,7 @@ export const {
         if (!passwordsMatch) return null;
         return users[0] as any;
       },
-    }),
+    })
   ],
   callbacks: {
     async jwt({ token, user }) {

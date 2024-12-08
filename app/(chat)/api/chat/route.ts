@@ -37,13 +37,7 @@ import { generateTitleFromUserMessage } from "../../actions";
 export const maxDuration = 60;
 
 const namespaces = [
-  "https://github.com/Brianleach11/PetConnect",
-  "https://github.com/Brianleach11/SecureAgent",
-  "https://github.com/Brianleach11/ai-chatbot",
-  "https://github.com/Brianleach11/Brain_Tumor_Classification",
-  "https://github.com/Brianleach11/discord",
-  "https://github.com/Brianleach11/Churn_Predictor",
-  "https://github.com/Brianleach11/Client_Delivery",
+  "stock-description",
 ];
 
 type AllowedTools =
