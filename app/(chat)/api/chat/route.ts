@@ -316,7 +316,7 @@ IMPORTANT:
 
     console.log("🤖 Calling LLM with streamText");
     const result = await streamText({
-      model: groq('mixtral-8x7b-32768'),
+      model: groq('llama-3.3-70b-versatile'),
       system: systemPrompt,
       messages: llmMessages,
       maxSteps: 5,
