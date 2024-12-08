@@ -248,13 +248,13 @@ export async function POST(request: Request) {
   - When a user asks a question like "What are companies that build data centers?", identify the relevant sector and retrieve all stocks within that sector.
   - For queries involving metrics, apply the necessary filters. For example, "Show me NYSE companies in the Technology sector with a market cap over $10 billion and trading volume above 1 million shares."
 
-- **Formatting Responses:**
-  - Present the information in a tabular format for clarity. Example:
+- ** Example of Formatting Responses:**
+  - Present the information in a tabular format for clarity. Example (You can use other formats):
 
-    | Ticker | Company Name     | Sector       | Market Cap | Volume    | Current Price | P/E Ratio | Dividend Yield |
+    | Ticker | Company Name      | Sector       | Market Cap | Volume    | Current Price | P/E Ratio | Dividend Yield  |
     |--------|-------------------|--------------|------------|-----------|---------------|-----------|-----------------|
     | ABC    | ABC Data Centers  | Technology   | $15B       | 2M        | $50           | 25        | 1.5%            |
-    | XYZ    | XYZ Infrastructure | Utilities    | $12B       | 1.5M      | $45           | 20        | 2.0%            |
+    | XYZ    | XYZ Infrastructure| Utilities    | $12B       | 1.5M      | $45           | 20        | 2.0%            |
 
 - **Clarifying Ambiguities:**
   - If a query is unclear, respond with a clarifying question. For example, "Could you please specify the sector or any particular metrics you're interested in?"

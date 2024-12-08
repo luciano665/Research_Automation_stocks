@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import type { Attachment, Message } from 'ai';
-import { useChat } from 'ai/react';
-import { AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import useSWR, { useSWRConfig } from 'swr';
-import { useWindowSize } from 'usehooks-ts';
+import type { Attachment, Message } from "ai";
+import { useChat } from "ai/react";
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import useSWR, { useSWRConfig } from "swr";
+import { useWindowSize } from "usehooks-ts";
 
-import { ChatHeader } from '@/components/chat-header';
-import { PreviewMessage, ThinkingMessage } from '@/components/message';
-import { useScrollToBottom } from '@/components/use-scroll-to-bottom';
-import type { Vote } from '@/lib/db/schema';
-import { fetcher } from '@/lib/utils';
+import { ChatHeader } from "@/components/chat-header";
+import { PreviewMessage, ThinkingMessage } from "@/components/message";
+import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
+import type { Vote } from "@/lib/db/schema";
+import { fetcher } from "@/lib/utils";
 
-import { Block, type UIBlock } from './block';
-import { BlockStreamHandler } from './block-stream-handler';
-import { MultimodalInput } from './multimodal-input';
-import { Overview } from './overview';
+import { Block, type UIBlock } from "./block";
+import { BlockStreamHandler } from "./block-stream-handler";
+import { MultimodalInput } from "./multimodal-input";
+import { Overview } from "./overview";
 
 export function Chat({
   id,
@@ -29,7 +29,6 @@ export function Chat({
 }) {
   const { mutate } = useSWRConfig();
 
-  // TODO: Transition model to personal pinecone index
   const {
     messages,
     setMessages,
@@ -41,12 +40,12 @@ export function Chat({
     stop,
     data: streamingData,
   } = useChat({
-    api: '/api/chat',
+    api: "/api/chat",
     id,
     body: { id },
     initialMessages,
     onFinish: () => {
-      mutate('/api/history');
+      mutate("/api/history");
     },
   });
 
@@ -54,10 +53,10 @@ export function Chat({
     useWindowSize();
 
   const [block, setBlock] = useState<UIBlock>({
-    documentId: 'init',
-    content: '',
-    title: '',
-    status: 'idle',
+    documentId: "init",
+    content: "",
+    title: "",
+    status: "idle",
     isVisible: false,
     boundingBox: {
       top: windowHeight / 4,
@@ -69,7 +68,7 @@ export function Chat({
 
   const { data: votes } = useSWR<Array<Vote>>(
     `/api/vote?chatId=${id}`,
-    fetcher,
+    fetcher
   );
 
   const [messagesContainerRef, messagesEndRef] =
@@ -106,7 +105,7 @@ export function Chat({
 
           {isLoading &&
             messages.length > 0 &&
-            messages[messages.length - 1].role === 'user' && (
+            messages[messages.length - 1].role === "user" && (
               <ThinkingMessage />
             )}
 
