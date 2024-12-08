@@ -20,7 +20,7 @@ export async function generateTitleFromUserMessage({
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'mixtral-8x7b-32768',  // or your preferred Groq model
+      model: 'llama-3.3-70b-versatile',  
       messages: [
         {
           role: 'system',
