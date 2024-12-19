@@ -1,4 +1,6 @@
-
+# Research Automation Chatbot
+ - It has acces to more than 9000 tickets from the Yahoo finance API
+ - Stored in a VectorDatabase
 
 ## Deploy Your Own
 
