@@ -1,7 +1,7 @@
 # Research Automation Chatbot
  - It has acces to more than 9000 tickets from the Yahoo finance API
  - Stored in a VectorDatabase
-
+ - Functionality equal to a normal chat interaction
 ## Deploy Your Own
 
 You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
